@@ -27,6 +27,10 @@ class Board extends React.Component {
     // 配列をコピー
     const squares = this.state.squares.slice();
 
+    // 勝利プレイヤーがいる、もしくは既に印がある場合
+    // 以降の処理をスキップ（印をつけたり、選手を交代したりしない）
+    if (calculateWinner(squares) || squares[i]) return;
+
     // 指定された枠に印
     squares[i] = this.state.xIsNext? 'X': 'O';
 
