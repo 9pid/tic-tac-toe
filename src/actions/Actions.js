@@ -13,30 +13,30 @@ export const ACTION_TYPE = {
  * アクションオブジェクト。
  * @typedef {object} Action
  * @property {!string} type アクションの種類
- * @property {?number} space マス目
- * @property {?number} turn ターン数
+ * @property {?number} spaceNumber マス目
+ * @property {?number} turnNumber ターン数
  */
 
 /**
  * 指定のマス目をマークする。
- * @param  {!number} space マス目
+ * @param  {!number} spaceNumber マス目
  * @return {!Action} 指定のマス目をマークのアクション
  */
-export function markSpaceAction(space) {
+export function markSpaceAction(spaceNumber) {
   return {
     type: ACTION_TYPE.MARK_SPACE,
-    space
+    spaceNumber
   };
 }
 
 /**
  * 指定のターンへ移動する。
- * @param  {!number} turn ターン数
+ * @param  {!number} turnNumber ターン数
  * @return {!Action} 指定のターンへ移動のアクション
  */
 export function moveToTurnAction(turn) {
   return {
     type: ACTION_TYPE.MOVE_TO_TURN,
-    turn
+    turnNumber
   };
 }
