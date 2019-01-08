@@ -1,17 +1,16 @@
 /**
- * アクションの種類: 指定のマス目をマーク
- * @const {string}
+ * アクションの種類
+ * @type {object}
+ * @property {string} MARK_SPACE 指定のマス目をマーク
+ * @property {string} MOVE_TO_TURN 指定のターンへ移動
  */
-export const MARK_SPACE = 'MARK_SPACE';
+export const ACTION_TYPE = {
+  MARK_SPACE: 'MARK_SPACE',
+  MOVE_TO_TURN: 'MOVE_TO_TURN'
+}
 
 /**
- * アクションの種類: 指定のターンへ移動
- * @const {string}
- */
-export const MOVE_TO_TURN = 'MOVE_TO_TURN';
-
-/**
- *
+ * アクションオブジェクト。
  * @typedef {object} Action
  * @property {!string} type アクションの種類
  * @property {?number} space マス目
@@ -25,7 +24,7 @@ export const MOVE_TO_TURN = 'MOVE_TO_TURN';
  */
 export function markSpaceAction(space) {
   return {
-    type: MARK_SPACE,
+    type: ACTION_TYPE.MARK_SPACE,
     space
   };
 }
@@ -37,7 +36,7 @@ export function markSpaceAction(space) {
  */
 export function moveToTurnAction(turn) {
   return {
-    type: MOVE_TO_TURN,
+    type: ACTION_TYPE.MOVE_TO_TURN,
     turn
   };
 }
