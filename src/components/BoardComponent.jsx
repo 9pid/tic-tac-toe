@@ -1,5 +1,5 @@
 import React from 'react';
-import SquareComponent from './SquareComponent';
+import SquareComponent from './SquareComponent.jsx';
 
 export default class BoardComponent extends React.Component {
   render() {

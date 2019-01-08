@@ -1,6 +1,6 @@
 import React from 'react';
-import BoardComponent from './BoardComponent';
-import {calculateWinner} from '../utils/ScoreUtil';
+import BoardComponent from './BoardComponent.jsx';
+import {calculateWinner} from '../utils/ScoreUtil.js';
 
 export default class GameComponent extends React.Component {
   constructor(props) {
