@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import { moveToTurnAction } from '../actions/Actions.js';
+import { calculateWinner } from '../utils/ScoreUtil.js';
 import GameComponent from '../components/GameComponent.jsx';
 
 const mapStateToProps = (state, ownProps) => {
+  const winner = calculateWinner(state.history[state.turnNumber].spaces);
   return {
-    totalTurnNumber: state.history.length
+    totalTurnNumber: state.history.length,
+    winner,
+    player: state.player
   };
 }
 

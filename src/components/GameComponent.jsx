@@ -23,7 +23,12 @@ export default class GameComponent extends React.Component {
   }
 
   renderStatus() {
-    const message = '仮のメッセージ';
+    const message = ((winner) => {
+      if (winner) return 'Winner: ' + winner;
+
+      return 'Next Player: ' + this.props.player;
+    })(this.props.winner);
+
     return (
       <div>
         {message}

@@ -1,14 +1,16 @@
-export function calculateWinner(squares) {
+import { GAME_CONST } from '../consts/GameConst.js';
+
+export function calculateWinner(spaces) {
   // 勝利条件
   const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
+    [GAME_CONST.SPACE.ONE, GAME_CONST.SPACE.TWO, GAME_CONST.SPACE.THREE],
+    [GAME_CONST.SPACE.FOUR, GAME_CONST.SPACE.FIVE, GAME_CONST.SPACE.SIX],
+    [GAME_CONST.SPACE.SEVEN, GAME_CONST.SPACE.EIGHT, GAME_CONST.SPACE.NINE],
+    [GAME_CONST.SPACE.ONE, GAME_CONST.SPACE.FOUR, GAME_CONST.SPACE.SEVEN],
+    [GAME_CONST.SPACE.TWO, GAME_CONST.SPACE.FIVE, GAME_CONST.SPACE.EIGHT],
+    [GAME_CONST.SPACE.THREE, GAME_CONST.SPACE.SIX, GAME_CONST.SPACE.NINE],
+    [GAME_CONST.SPACE.ONE, GAME_CONST.SPACE.FIVE, GAME_CONST.SPACE.NINE],
+    [GAME_CONST.SPACE.THREE, GAME_CONST.SPACE.FIVE, GAME_CONST.SPACE.SEVEN]
   ];
 
   // 盤面チェック
@@ -17,13 +19,13 @@ export function calculateWinner(squares) {
     if (result) return result;
 
     // チェック対象の印
-    const value = squares[a];
+    const value = spaces[a];
 
     // 値なしならスキップ
     if (value == null) return null;
 
     // 勝利していたら、勝利印を返す
-    if (squares[b] === value && squares[c] === value) return value;
+    if (spaces[b] === value && spaces[c] === value) return value;
   }, null);
 
   return result;
