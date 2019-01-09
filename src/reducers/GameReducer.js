@@ -9,7 +9,7 @@ import { GAME_CONST } from '../consts/GameConst.js'
  */
 const initialState = {
   history: [{
-    squares: Array(9).fill(null)
+    spaces: Array(9).fill(null)
   }],
   turnNumber: 0,
   player: GAME_CONST.PLAYER.X
@@ -66,10 +66,10 @@ const GameReducer = (state=initialState, action) => {
  * @return {number[]} 新しい盤面
  */
 function createNewBoard(spaceNumber, player, board) {
-  const newSquare = board.squares.concat();
-  newSquare[spaceNumber] = player;
+  const newSpace = board.spaces.concat();
+  newSpace[spaceNumber] = player;
   return {
-    squares: newSquare
+    spaces: newSpace
   };
 }
 

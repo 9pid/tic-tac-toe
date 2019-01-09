@@ -28,14 +28,14 @@ export const GAME_CONST = {
    * @property {number} NINE マス9
    */
   SPACE: {
-    ONE: 1,
-    TWO: 2,
-    THREE: 3,
-    FOUR: 4,
-    FIVE: 5,
-    SIX: 6,
-    SEVEN: 7,
-    EIGHT: 8,
-    NINE: 9
+    ONE: 0,
+    TWO: 1,
+    THREE: 2,
+    FOUR: 3,
+    FIVE: 4,
+    SIX: 5,
+    SEVEN: 6,
+    EIGHT: 7,
+    NINE: 8
   }
 }

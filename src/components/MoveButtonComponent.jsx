@@ -6,7 +6,7 @@ export default class MoveButtonComponent extends React.Component {
   }
 
   render() {
-    const message = this.props.turnNumber? ('Go to move #' + step): 'Go to game start';
+    const message = this.props.turnNumber? ('Go to move #' + this.props.turnNumber): 'Go to game start';
     return (
       <li>
         <button onClick={() => this.props.onClick(this.props.turnNumber)}>

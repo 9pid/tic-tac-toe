@@ -1,31 +1,31 @@
 import React from 'react';
-import SquareComponent from './SquareComponent.jsx';
+import { GAME_CONST } from '../consts/GameConst.js';
+import SpaceContainer from '../containers/SpaceContainer.js';
 
 export default class BoardComponent extends React.Component {
   render() {
     return (
       <div>
         <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+          {this.renderSpace(GAME_CONST.SPACE.ONE)}
+          {this.renderSpace(GAME_CONST.SPACE.TWO)}
+          {this.renderSpace(GAME_CONST.SPACE.THREE)}
         </div>
         <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
+          {this.renderSpace(GAME_CONST.SPACE.FOUR)}
+          {this.renderSpace(GAME_CONST.SPACE.FIVE)}
+          {this.renderSpace(GAME_CONST.SPACE.SIX)}
         </div>
         <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
+          {this.renderSpace(GAME_CONST.SPACE.SEVEN)}
+          {this.renderSpace(GAME_CONST.SPACE.EIGHT)}
+          {this.renderSpace(GAME_CONST.SPACE.NINE)}
         </div>
       </div>
     );
   }
 
-  renderSquare(i) {
-    return <SquareComponent value={this.props.squares[i]}
-                            onClick={() => this.props.onClick(i)} />;
+  renderSpace(spaceNumber) {
+    return <SpaceContainer spaceNumber={spaceNumber} />;
   }
 }

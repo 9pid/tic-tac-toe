@@ -12,7 +12,7 @@ export default class GameComponent extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
-          {/* <BoardComponent /> */}
+          <BoardComponent />
         </div>
         <div className="game-info">
           {this.renderStatus()}
