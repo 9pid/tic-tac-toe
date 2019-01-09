@@ -34,7 +34,7 @@ export function markSpaceAction(spaceNumber) {
  * @param  {!number} turnNumber ターン数
  * @return {!Action} 指定のターンへ移動のアクション
  */
-export function moveToTurnAction(turn) {
+export function moveToTurnAction(turnNumber) {
   return {
     type: ACTION_TYPE.MOVE_TO_TURN,
     turnNumber
