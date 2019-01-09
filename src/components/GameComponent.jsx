@@ -4,10 +4,6 @@ import MoveButtonComponent from './MoveButtonComponent.jsx';
 import {calculateWinner} from '../utils/ScoreUtil.js';
 
 export default class GameComponent extends React.Component {
-  constructor(props) {
-    super();
-  }
-
   render() {
     return (
       <div className="game">
