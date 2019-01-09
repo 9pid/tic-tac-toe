@@ -25,8 +25,8 @@ const GameReducer = (state=initialState, action) => {
   switch (action.type) {
     case ACTION_TYPE.MARK_SPACE:
       return ((state, action) => {
-        const newBoard = createNewBoard(action.spaceNumber, state.player, state.history.slice(-1)[0]);
-        const newHistory = state.history.concat([newBoard]);
+        const newBoard = createNewBoard(action.spaceNumber,state.player, state.history[state.turnNumber]);
+        const newHistory = state.history.slice(0, state.turnNumber+1).concat([newBoard]);
         const newTurnNumber = state.turnNumber + 1;
         const newPlayer = state.player === GAME_CONST.PLAYER.X?
           GAME_CONST.PLAYER.O:
