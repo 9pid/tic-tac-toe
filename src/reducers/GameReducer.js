@@ -1,5 +1,6 @@
 import { ACTION_TYPE } from '../actions/Actions.js'
 import { GAME_CONST } from '../consts/GameConst.js'
+import { calculateWinner } from '../utils/ScoreUtil.js';
 
 /**
  * initial state
@@ -25,6 +26,13 @@ const GameReducer = (state=initialState, action) => {
   switch (action.type) {
     case ACTION_TYPE.MARK_SPACE:
       return ((state, action) => {
+        const spaces = state.history[state.turnNumber].spaces;
+        const winner = calculateWinner(spaces);
+        const space = spaces[action.spaceNumber];
+        if (winner || space) {
+          return Object.assign({}, state);
+        }
+
         const newBoard = createNewBoard(action.spaceNumber,state.player, state.history[state.turnNumber]);
         const newHistory = state.history.slice(0, state.turnNumber+1).concat([newBoard]);
         const newTurnNumber = state.turnNumber + 1;
